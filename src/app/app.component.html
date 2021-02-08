@@ -1,0 +1,231 @@
+<div class="container p-3 my-3 border">
+
+  <div class="row">
+    <div class="col-lg-12">
+        <jqxButton class="float-right" #buttonReference [width]="100" [theme]="'material'" (click)='onNewClaimClick()'>New Claim</jqxButton>
+    </div>
+  </div>
+
+  <br>
+  <jqxGrid #myGrid [sortable]="true" (onCelldoubleclick)="onCellDoubleClick($event)" [altrows]="true" [width]="'100%'" [source]="grid_source" [theme]="'material'" [pageable]="true" [filterable]="true"  [sortable]="true" [columns]="grid_columns" ></jqxGrid> 
+
+  <jqxWindow #myWindow [theme]="'light'"  [width]="450" [height]="320" [resizable]="false" [isModal]="true" [autoOpen]="false" >
+    <div>New Claim</div>
+    <div style="overflow: hidden;">
+      <!-- <jqxForm #myForm [width]='440' [template]='template' ></jqxForm> -->
+
+
+
+      <table id="">
+        <tbody>
+          <tr>
+            <td>
+              <table >
+                <tbody>
+                  <tr >
+                    <td >
+                      <div style="display:block; overflow: visible; width: 100%; background: transparent;">
+                        <div class="" style="display:block;height: 100%; padding-left: 5px;padding-right: 5px;padding-top: 5px;padding-bottom: 5px;">
+                          <div style="text-align: left;">Service Type</div>
+                        </div>
+                      </div>
+                    </td>
+                    <td style="width:70%; background: transparent;">
+                      <div style="display:block; overflow: visible; width: 100%; background: transparent;">
+                        <div style="background: transparent;display: block;padding-left: 5px;padding-right: 5px;padding-top: 5px;padding-bottom: 5px;text-align: left;">
+                          <jqxDropDownList #serviceType [width]="'100%'" [height]="30" [source]="serviceType_dataAdapter" [selectedIndex]="1"  [displayMember]="'desc'" [valueMember]="'id'" [autoDropDownHeight]="true"></jqxDropDownList>
+                        </div>
+                      </div>
+                    </td>
+                    <td style="width: auto; background: transparent;"> </td>
+                  </tr>
+                </tbody>
+              </table>
+            </td>
+          </tr>
+          <tr style="width: 100%; height: auto;">
+            <td style="width: 100%;">
+              <table style="width: 100%; white-space: nowrap; border: 0px;" cellspacing="0" cellpadding="0">
+                <tbody>
+                  <tr style="width: 100%">
+                    <td style="width:30%; background: transparent;">
+                      <div style="display:block; overflow: visible; width: 100%; background: transparent;">
+                        <div class="" style="display:block;height: 100%; padding-left: 5px;padding-right: 5px;padding-top: 5px;padding-bottom: 5px;">
+                          <div style="text-align: left;;" id="label_el_jqxWidget638b603d168a1">Service Date</div>
+                        </div>
+                      </div>
+                    </td>
+                    <td style="width:70%; background: transparent;">
+                      <div style="display:block; overflow: visible; width: 100%; background: transparent;">
+                        <div style="background: transparent;display: block;padding-left: 5px;padding-right: 5px;padding-top: 5px;padding-bottom: 5px;text-align: left;">
+                          <jqxDateTimeInput #serviceDate [width]="'100%'" [height]="30" ></jqxDateTimeInput>
+                        </div>
+                      </div>
+                    </td>
+                    <td style="width: auto; background: transparent;"> </td>
+                  </tr>
+                </tbody>
+              </table>
+            </td>
+          </tr>
+          <tr style="width: 100%; height: auto;">
+            <td style="width: 100%;">
+              <table style="width: 100%; white-space: nowrap; border: 0px;" cellspacing="0" cellpadding="0">
+                <tbody>
+                  <tr style="width: 100%">
+                    <td style="width:30%; background: transparent;">
+                      <div style="display:block; overflow: visible; width: 100%; background: transparent;">
+                        <div class="" style="display:block;height: 100%; padding-left: 5px;padding-right: 5px;padding-top: 5px;padding-bottom: 5px;">
+                          <div style="text-align: left;;">Patient NHI</div>
+                        </div>
+                      </div>
+                    </td>
+                    <td style="width:70%; background: transparent;">
+                      <div style="display:block; overflow: visible; width: 100%; background: transparent;">
+                        <div style="background: transparent;display: block;padding-left: 5px;padding-right: 5px;padding-top: 5px;padding-bottom: 5px;text-align: left;">
+                          <jqxInput #patientNHI [width]="'100%'" [height]="30" ></jqxInput>
+                        </div>
+                      </div>
+                    </td>
+                    <td style="width: auto; background: transparent;"> </td>
+                  </tr>
+                </tbody>
+              </table>
+            </td>
+          </tr>
+          <tr style="width: 100%; height: auto;">
+            <td style="width: 100%;">
+              <table style="width: 100%; white-space: nowrap; border: 0px;" cellspacing="0" cellpadding="0">
+                <tbody>
+                  <tr style="width: 100%">
+                    <td style="width:30%; background: transparent;">
+                      <div style="display:block; overflow: visible; width: 100%; background: transparent;">
+                        <div class="" style="display:block;height: 100%; padding-left: 5px;padding-right: 5px;padding-top: 5px;padding-bottom: 5px;">
+                          <div style="text-align: left;">Claim Amount</div>
+                        </div>
+                      </div>
+                    </td>
+                    <td style="width:70%; background: transparent;">
+                      <div style="display:block; overflow: visible; width: 100%; background: transparent;">
+                        <div style="background: transparent;display: block;padding-left: 5px;padding-right: 5px;padding-top: 5px;padding-bottom: 5px;text-align: left;">
+                          <jqxInput #claimAmount [width]="'100%'" [height]="30" ></jqxInput>
+                        </div>
+                      </div>
+                    </td>
+                    <td style="width: auto; background: transparent;"> </td>
+                  </tr>
+                </tbody>
+              </table>
+            </td>
+          </tr>
+          <tr style="width: 100%; height: auto;" id="rowWrap_el_jqxWidget638b603d168a4">
+            <td style="width: 100%;">
+              <table style="width: 100%; white-space: nowrap; border: 0px;" cellspacing="0" cellpadding="0">
+                <tbody>
+                  <tr style="width: 100%">
+                    <td style="width:30%; background: transparent;">
+                      <div style="display:block; overflow: visible; width: 100%; background: transparent;">
+                        <div class="" style="display:block;height: 100%; padding-left: 5px;padding-right: 5px;padding-top: 5px;padding-bottom: 5px;">
+                          <div style="text-align: left;;" id="label_el_jqxWidget638b603d168a4">Claim Status</div>
+                        </div>
+                      </div>
+                    </td>
+                    <td style="width:70%; background: transparent;">
+                      <div style="display:block; overflow: visible; width: 100%; background: transparent;">
+                        <div style="background: transparent;display: block;padding-left: 5px;padding-right: 5px;padding-top: 5px;padding-bottom: 5px;text-align: left;">
+                          <jqxDropDownList #claimStatus [width]="'100%'" [height]="30" [source]="claimStatus_dataAdapter" [selectedIndex]="1"  [displayMember]="'desc'" [valueMember]="'id'" [autoDropDownHeight]="true"></jqxDropDownList>
+                        </div>
+                      </div>
+                    </td>
+                    <td style="width: auto; background: transparent;"> </td>
+                  </tr>
+                </tbody>
+              </table>
+            </td>
+          </tr>
+        </tbody>
+      </table>
+
+
+
+<!-- 
+        <table>
+            <tr>
+                <td align="right">First Name</td>
+                <td align="left">
+
+                    <jqxInput [theme]="'bootstrap'" #firstname  [height]="30"></jqxInput>
+
+                </td>
+            </tr>
+            <tr>
+                <td align="right">Last Name</td>
+                <td align="left">
+
+                    <jqxInput [theme]="'bootstrap'" #lastname></jqxInput>
+
+                </td>
+            </tr>
+            <tr>
+                <td align="right">Product</td>
+                <td align="left">
+
+                   <jqxInput [theme]="'bootstrap'" #product></jqxInput>
+
+                </td>
+            </tr>
+            <tr>
+                <td align="right">Quantity</td>
+                <td align="left">
+
+                    <jqxNumberInput [theme]="'material'" #quantity
+                        [width]="150" [height]="23" [decimalDigits]="0" 
+                        [min]="0" [spinButtons]="true" [spinMode]="'simple'">
+                    </jqxNumberInput>
+
+                </td>
+            </tr>
+            <tr>
+                <td align="right">Price</td>
+                <td align="left">
+
+                  <jqxNumberInput [theme]="'material'" #price
+                      [width]="150" [height]="23" [symbol]="'$'"
+                      [min]="0" [spinButtons]="true" [spinMode]="'simple'">
+                  </jqxNumberInput>
+
+                </td>
+            </tr>
+            <tr>
+              <td align="right"></td>
+              <td style="padding-top: 10px;" align="right">
+
+                  <jqxButton [theme]="'material'" style="margin-right: 5px;" (onClick)="saveBtn()">
+                      Save
+                  </jqxButton>
+
+                  <jqxButton [theme]="'material'" style="margin-right: 5px;" (onClick)="cancelBtn()">
+                      Cancel
+                  </jqxButton>
+
+              </td>
+            </tr>
+        </table> -->
+      <br>
+        <div class="modal-footer">
+          <jqxButton #buttonReference [width]="100" [theme]="'material'" (onClick)="onSaveClick()">Save</jqxButton>
+          <jqxButton #buttonReference [width]="100" [theme]="'material'" [template]="'primary'" (onClick)="onCloseClick()">Close</jqxButton>
+          
+      </div>
+    </div>
+
+
+
+  </jqxWindow>
+
+</div>
+
+
+
+
+

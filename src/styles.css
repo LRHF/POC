@@ -1,0 +1,42 @@
+/* You can add global styles to this file, and also import other style files */
+
+html, body { height: 100%; }
+body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
+
+
+td:nth-child(1) { 
+    padding-left: 3px; 
+} 
+
+td:nth-child(2) { 
+    padding-right: 3px; 
+} 
+
+table {
+    border: 0px !important;
+    background-color: transparent !important;
+    padding: 5px;
+    width: 100%; 
+    white-space: nowrap;
+}
+
+/* input[type=text] { 
+    padding-left: 10px !important;
+    border: 1px solid black !important;
+}*/
+
+
+/*input[type="text"].jqx-input {
+     width: '300px' !important; 
+     height: 30px !important;  
+     padding-left: 10px !important; 
+} */
+ 
+/* input.jqx-input-bootstrap > div{
+    padding-left: 12px !important;
+    font-size: 14px;  
+*/
+
+/* input[type="text"].jqx-input-bootstrap, input[type="text"].jqx-widget-content-bootstrap, input[type="textarea"].jqx-widget-content-bootstrap, textarea.jqx-input-bootstrap {
+    padding-left: 12px !important;
+} */
